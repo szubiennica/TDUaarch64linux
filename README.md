@@ -1,32 +1,28 @@
-# Open Test Drive Unlimited (OpenTDU)
-[![Windows (x86_x64)](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited/actions/workflows/build_windows.yml/badge.svg)](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited/actions/workflows/build_windows.yml) [![Linux (x86_64)](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited/actions/workflows/build_linux.yml/badge.svg)](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited/actions/workflows/build_linux.yml) [![macOS (arm64)](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited/actions/workflows/build_darwin.yml/badge.svg)](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited/actions/workflows/build_darwin.yml)
-
-Source port of Test Drive Unlimited PC (TDU) (MC 1.66A)
+# Open Test Drive Unlimited for AARCH64 (based on OpenTDU)
+Original repo: https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited
 
 **WORK IN PROGRESS**
 
-The goal of this project is to create a new client fixing various issues encountered on modern systems (AI, rendering, security, etc.) as well as providing cross-platform compatibility.
+The goal of this project is to bring TDU to handheld consoles running rocknix as a port.
 
 **This project is not a replacement for the game (you still need to own a legal copy); and does not provide any game assets!**
 
 <img src="/screenshots/carshowcase_exige.jpg" alt="GMCarShowcase" width="256" height="144"> <img src="/screenshots/worldviewer_3.jpg" alt="GMSandbox" width="256" height="144"> <img src="/screenshots/freeride.jpg" alt="GMFreeride" width="256" height="144"> <img src="/screenshots/login.jpg" alt="GMLogin" width="256" height="144"> <img src="/screenshots/cinviewer.jpg" alt="GMCinViewer" width="256" height="144"> <img src="/screenshots/boattour.jpg" alt="GMBoatTour" width="256" height="144"> <img src="/screenshots/living.jpg" alt="GMLiving" width="256" height="144"> <img src="/screenshots/garage.jpg" alt="GMGarage" width="256" height="144"> <img src="/screenshots/cockpit.jpg" alt="GMFreeride (cockpit)" width="256" height="144"> 
 
-Regular updates/screenshots can be found in this [thread](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited/discussions/175).
+Updates of original project (updates/screenshots) can be found in this [thread](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited/discussions/175).
 
-## Download
-Nightly binaries are available here: [https://github.com/opentestdriveunlimited/opentestdriveunlimited/releases](https://github.com/opentestdriveunlimited/opentestdriveunlimited/releases). 
+
 
 ## Installation
-Copy the opentdu binary and EURO folder content (**must be merged with your original EURO folder; THIS IS NOT A REPLACEMENT FOR YOUR ORIGINAL EURO FOLDER**) to your TestDriveUnlimited folder.
-
-## Dependencies
-* CMake (3.15 or newer)
-* C++17 compiler (eg. clang; gcc or MSVC)
-* Vulkan SDK (1.3.204.0 or newer)
-
-## Build instructions
-1. Clone the code using: `git clone --recursive git@github.com:opentestdriveunlimited/OpenTestDriveUnlimited.git`
-2. Run the build script for your host platform (`build_win.bat x64` for **Windows** or `build_unix.sh` for **Linux or macOS**)
+1. Go to ports folder on rocknix device (/storage/roms/ports)
+2. Create two folders:
+/storage/roms/ports/tdu
+/storage/roms/ports/tdu/EURO
+3. Copy from your original 1.66A game copy installed legally on pc. All content from Euro folder to /storage/roms/ports/tdu/EURO on rocknix
+and evrything from main game folder (folder with TestDriveUnlimited.exe) to /storage/roms/ports/tdu
+4. Copy evrything from release archive to /storage/roms/ports/
+5. In rocknix menu (emulationstation) press start > game settings > update gamelists
+6. Go to ports (if you dont have portmaster installed install it first), then open OpenTDU
 
 ## Command Line Arguments
 | Command | Description |
