@@ -38,6 +38,10 @@ Particles::~Particles() {
 }
 
 bool Particles::initialize() {
+    static const bool bOtduOff = getenv( "OTDU_NO_PARTICLES" ) != nullptr;
+    if ( bOtduOff ) {
+        return false;
+    }
     // FUN_008a4f00
     bInitialized = true;
     return true;

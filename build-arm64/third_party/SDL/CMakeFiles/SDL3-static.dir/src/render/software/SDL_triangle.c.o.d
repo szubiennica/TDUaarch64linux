@@ -1,0 +1,20 @@
+third_party/SDL/CMakeFiles/SDL3-static.dir/src/render/software/SDL_triangle.c.o: \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_triangle.c \
+ /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/SDL_internal.h \
+ /usr/lib/gcc-cross/aarch64-linux-gnu/14/include/limits.h \
+ /usr/lib/gcc-cross/aarch64-linux-gnu/14/include/syslimits.h \
+ /usr/aarch64-linux-gnu/include/limits.h \
+ /usr/aarch64-linux-gnu/include/bits/libc-header-start.h \
+ /usr/aarch64-linux-gnu/include/features.h \
+ /usr/aarch64-linux-gnu/include/bits/posix1_lim.h \
+ /usr/aarch64-linux-gnu/include/bits/wordsize.h \
+ /usr/aarch64-linux-gnu/include/bits/local_lim.h \
+ /usr/aarch64-linux-gnu/include/linux/limits.h \
+ /usr/aarch64-linux-gnu/include/bits/pthread_stack_min-dynamic.h \
+ /usr/aarch64-linux-gnu/include/bits/posix2_lim.h \
+ /usr/aarch64-linux-gnu/include/bits/xopen_lim.h \
+ /usr/aarch64-linux-gnu/include/bits/uio_lim.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_triangle.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/../../video/SDL_surface_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/../../video/SDL_blit.h

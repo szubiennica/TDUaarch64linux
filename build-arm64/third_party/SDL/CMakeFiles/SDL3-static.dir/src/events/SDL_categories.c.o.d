@@ -1,0 +1,25 @@
+third_party/SDL/CMakeFiles/SDL3-static.dir/src/events/SDL_categories.c.o: \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_categories.c \
+ /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/SDL_internal.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_events_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/../video/SDL_sysvideo.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/include/SDL3/SDL_vulkan.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/include/SDL3/SDL_stdinc.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/include/SDL3/SDL_error.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/include/SDL3/SDL_video.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/include/SDL3/SDL_begin_code.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/include/SDL3/SDL_close_code.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/../video/SDL_surface_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/../video/SDL_blit.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_clipboardevents_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_displayevents_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_dropevents_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_keyboard_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_keymap_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_mouse_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_touch_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_pen_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/../SDL_internal.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_windowevents_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/events/SDL_categories_c.h

@@ -1,0 +1,2 @@
+"/usr/bin/aarch64-linux-gnu-gcc-ar-14" qc libfoo.a CMakeFiles/foo.dir/foo.cpp.o
+"/usr/bin/aarch64-linux-gnu-gcc-ranlib-14" libfoo.a

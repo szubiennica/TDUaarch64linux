@@ -133,13 +133,19 @@ BankCommonFlash::initialize( const bool param_1 ) {
                 numTextures++;
             } else if ( eStack_64c.SubType == 1 ) {
                 std::string pcVar10 = eStack_64c.Filename;
-                const char *pcVar9 = strrchr( pcVar10.c_str(), '\\' );
-                const char *pcVar8 = strrchr( pcVar10.c_str(), '.' );
-                int32_t _Count = static_cast<int32_t>(
-                    (uintptr_t)pcVar8 - (uintptr_t)( pcVar9 + 1 ) );
-
+                const std::string &entryName = pcVar10;
+                size_t nameSlash = entryName.find_last_of( "\\/" );
+                size_t nameDot = entryName.find_last_of( '.' );
+                size_t nameStart = ( nameSlash == std::string::npos ) ? 0 : nameSlash + 1;
+                size_t nameEnd = ( nameDot == std::string::npos || nameDot < nameStart ) ? entryName.size() : nameDot;
+                static bool bWarnedNoSeparator = false;
+                if ( nameSlash == std::string::npos && !bWarnedNoSeparator ) {
+                    bWarnedNoSeparator = true;
+                    fprintf( stderr, "bank_common_flash: entry name without path separator: '%s'\n", entryName.c_str() );
+                }
                 char acStack_230[560];
-                strncpy( acStack_230, pcVar9 + 1, _Count );
+                size_t _Count = std::min( nameEnd - nameStart, sizeof( acStack_230 ) - 1 );
+                memcpy( acStack_230, entryName.c_str() + nameStart, _Count );
                 acStack_230[_Count] = '\0';
 
                 CalculateFlashMaterialHashcode( pMaterials[numMaterials].Bytes,

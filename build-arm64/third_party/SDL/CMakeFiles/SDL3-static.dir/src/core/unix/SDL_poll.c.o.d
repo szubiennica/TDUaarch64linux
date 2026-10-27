@@ -1,0 +1,31 @@
+third_party/SDL/CMakeFiles/SDL3-static.dir/src/core/unix/SDL_poll.c.o: \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/core/unix/SDL_poll.c \
+ /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/SDL_internal.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/core/unix/SDL_poll.h \
+ /usr/aarch64-linux-gnu/include/poll.h \
+ /usr/aarch64-linux-gnu/include/sys/poll.h \
+ /usr/aarch64-linux-gnu/include/features.h \
+ /usr/aarch64-linux-gnu/include/bits/poll.h \
+ /usr/aarch64-linux-gnu/include/bits/types/__sigset_t.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_timespec.h \
+ /usr/aarch64-linux-gnu/include/errno.h \
+ /usr/aarch64-linux-gnu/include/bits/errno.h \
+ /usr/aarch64-linux-gnu/include/linux/errno.h \
+ /usr/aarch64-linux-gnu/include/asm/errno.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/errno.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/errno-base.h \
+ /usr/aarch64-linux-gnu/include/bits/types/error_t.h \
+ /usr/aarch64-linux-gnu/include/time.h \
+ /usr/lib/gcc-cross/aarch64-linux-gnu/14/include/stddef.h \
+ /usr/aarch64-linux-gnu/include/bits/time.h \
+ /usr/aarch64-linux-gnu/include/bits/types.h \
+ /usr/aarch64-linux-gnu/include/bits/timex.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_timeval.h \
+ /usr/aarch64-linux-gnu/include/bits/types/clock_t.h \
+ /usr/aarch64-linux-gnu/include/bits/types/time_t.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_tm.h \
+ /usr/aarch64-linux-gnu/include/bits/types/clockid_t.h \
+ /usr/aarch64-linux-gnu/include/bits/types/timer_t.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_itimerspec.h \
+ /usr/aarch64-linux-gnu/include/bits/types/locale_t.h

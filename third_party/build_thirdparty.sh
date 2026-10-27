@@ -2,7 +2,7 @@
 set -euo pipefail
 echo "Building Cityhash..."
 pushd cityhash
-./configure
+./configure --host=aarch64-linux-gnu
 popd
 
 echo "Building libbinkdec..."

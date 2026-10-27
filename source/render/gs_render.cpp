@@ -348,6 +348,20 @@ bool GSRender::initialize( TestDriveGameInstance *param_2 ) {
             bHDREnabled = gpPlayerData->isHDREnabled();
             bWasHDREnabled = bHDREnabled;
 
+            {
+                fprintf( stderr, "OTDU: profile AA=%d HDR=%d LOD=%u\n",
+                         (int)activeAA, (int)bHDREnabled,
+                         (unsigned)activeLODQuality );
+                const char *pQuality = getenv( "OTDU_QUALITY" );
+                if ( pQuality != nullptr && strcmp( pQuality, "low" ) == 0 ) {
+                    activeAA = eAntiAliasingMethod::AAM_Disabled;
+                    bHDREnabled = false;
+                    bWasHDREnabled = false;
+                    setLODQuality( 0 );
+                    fprintf( stderr, "OTDU: quality override LOW applied\n" );
+                }
+            }
+
             gPickedRefreshRate = gEdSys.getMonitorRefreshRate();
             gBootDisplayMode.RefreshRate = uint32_t( gPickedRefreshRate );
 

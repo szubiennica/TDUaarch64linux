@@ -457,14 +457,22 @@ bool GSPostFX::initializeEffects() {
     RenderScene *peVar11 =
         gpRender->getRenderPass<eRenderPass::RP_Sun>().pScene;
 
+    // OTDU_NO_MOTIONBLUR: keep the radial blur nodes out of the frame graph
+    static const bool bOtduNoMotionBlur =
+        getenv( "OTDU_NO_MOTIONBLUR" ) != nullptr;
+
     PostFXNode *iVar5 = effects[ePostFXStep::PFXS_RadialBlur]->getInput();
-    if ( iVar5 != nullptr ) {
+    if ( iVar5 != nullptr && !bOtduNoMotionBlur ) {
         gEdRender.pFrameGraph->insertAfterObject( iVar5, peVar11 );
     }
 
     PostFXNode *iVar6 = effects[ePostFXStep::PFXS_FakeDOF]->getInput();
     if ( iVar6 != nullptr ) {
-        gEdRender.pFrameGraph->insertAfterObject( iVar6, iVar5 );
+        if ( bOtduNoMotionBlur ) {
+            gEdRender.pFrameGraph->insertAfterObject( iVar6, peVar11 );
+        } else {
+            gEdRender.pFrameGraph->insertAfterObject( iVar6, iVar5 );
+        }
     }
 
     peVar11 = gpRender->getRenderPass<eRenderPass::RP_CockpitCompo>().pScene;
@@ -487,7 +495,7 @@ bool GSPostFX::initializeEffects() {
     }
 
     iVar9 = effects[ePostFXStep::PFXS_RadialBlurCockpit]->getInput();
-    if ( iVar6 != nullptr ) {
+    if ( iVar6 != nullptr && !bOtduNoMotionBlur ) {
         gEdRender.pFrameGraph->insertAfterObject( iVar9, iVar6 );
     }
 

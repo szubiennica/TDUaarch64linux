@@ -1146,8 +1146,29 @@ void RenderDevice::destroyBuffer( GPUBuffer *pBuffer ) {
     delete pBuffer;
 }
 
+// Render scale: the engine backbuffer may be smaller than the swapchain
+// (env OTDU_RENDER_SCALE, e.g. 0.5); it is stretched with a blit on present.
+static float gOtduRenderScale = -1.0f;
+static uint32_t gOtduSwapchainWidth = 0;
+static uint32_t gOtduSwapchainHeight = 0;
+
+static float otduGetRenderScale() {
+    if ( gOtduRenderScale < 0.0f ) {
+        const char *pEnv = getenv( "OTDU_RENDER_SCALE" );
+        float scale = pEnv ? (float)atof( pEnv ) : 1.0f;
+        if ( !( scale >= 0.2f ) ) {
+            scale = 1.0f;
+        }
+        if ( scale > 1.0f ) {
+            scale = 1.0f;
+        }
+        gOtduRenderScale = scale;
+    }
+    return gOtduRenderScale;
+}
+
 bool RenderDevice::resize( uint32_t width, uint32_t height ) {
-    if ( backbuffer.Width == width && backbuffer.Height == height ) {
+    if ( gOtduSwapchainWidth == width && gOtduSwapchainHeight == height ) {
         return true;
     }
 
@@ -3150,8 +3171,25 @@ bool RenderDevice::createSwapchain() {
 
     VkSurfaceFormatKHR swapchainFormat = formats[pickedFormatIndex];
     VkExtent2D swapchainDimension = capabilities.currentExtent;
+#if defined( OTDU_USE_SDL )
+    // Wayland reports 0xFFFFFFFF: the window dictates the swapchain size.
+    if ( swapchainDimension.width == 0xFFFFFFFFu ||
+         swapchainDimension.height == 0xFFFFFFFFu ) {
+        SDL_Window *sdlWindow = (SDL_Window *)gEdSys.getWindow();
+        SDL_SyncWindow( sdlWindow );
+        int pixelWidth = 0, pixelHeight = 0;
+        SDL_GetWindowSizeInPixels( sdlWindow, &pixelWidth, &pixelHeight );
+        swapchainDimension.width = std::clamp( (uint32_t)pixelWidth,
+            capabilities.minImageExtent.width, capabilities.maxImageExtent.width );
+        swapchainDimension.height = std::clamp( (uint32_t)pixelHeight,
+            capabilities.minImageExtent.height, capabilities.maxImageExtent.height );
+    }
+#endif
 
     uint32_t imageCount = PendingFrameCount;
+    if ( imageCount < capabilities.minImageCount ) {
+        imageCount = capabilities.minImageCount;
+    }
     if ( capabilities.maxImageCount > 0 &&
          imageCount > capabilities.maxImageCount ) {
         imageCount = capabilities.maxImageCount;
@@ -3180,6 +3218,8 @@ bool RenderDevice::createSwapchain() {
     VkResult opResult =
         vkCreateSwapchainKHR( device, &createInfo, nullptr, &swapchain );
     if ( opResult != VK_SUCCESS ) {
+        fprintf( stderr, "createSwapchain: vkCreateSwapchainKHR failed (%d), extent %ux%u, images %u\n",
+                 (int)opResult, swapchainDimension.width, swapchainDimension.height, imageCount );
         return false;
     }
 
@@ -3211,13 +3251,25 @@ bool RenderDevice::createSwapchain() {
         OTDU_ASSERT( imageCreationResult == VK_SUCCESS );
     }
 
+    gOtduSwapchainWidth = swapchainDimension.width;
+    gOtduSwapchainHeight = swapchainDimension.height;
+
+    VkExtent2D backbufferDimension = swapchainDimension;
+    const float otduScale = otduGetRenderScale();
+    if ( otduScale < 1.0f ) {
+        backbufferDimension.width = std::max(
+            64u, (uint32_t)( swapchainDimension.width * otduScale ) );
+        backbufferDimension.height = std::max(
+            36u, (uint32_t)( swapchainDimension.height * otduScale ) );
+    }
+
     if ( !createBackbufferTexture( swapchainFormat.format,
-                                   swapchainDimension ) ) {
+                                   backbufferDimension ) ) {
         return false;
     }
 
-    backbuffer.Width = swapchainDimension.width;
-    backbuffer.Height = swapchainDimension.height;
+    backbuffer.Width = backbufferDimension.width;
+    backbuffer.Height = backbufferDimension.height;
 
     // NOTE: Only maps to what the original game support for now (in
     // the future this could be extended to support HW HDR)
@@ -3368,15 +3420,32 @@ void RenderDevice::presentBackbuffer() {
                               VK_PIPELINE_STAGE_TRANSFER_BIT, 0, 0, nullptr, 0,
                               nullptr, 1, &barrier );
 
-        VkImageCopy region = {};
-        region.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-        region.srcSubresource.layerCount = 1;
-        region.dstSubresource = region.srcSubresource;
-        region.extent = { backbuffer.Width, backbuffer.Height, 1 };
-        vkCmdCopyImage( commandBuffer, pBackbuffer->Image[resourceIndex],
-                        VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
-                        swapchainImages[imageIndex],
-                        VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, 1, &region );
+        if ( backbuffer.Width == gOtduSwapchainWidth &&
+             backbuffer.Height == gOtduSwapchainHeight ) {
+            VkImageCopy region = {};
+            region.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+            region.srcSubresource.layerCount = 1;
+            region.dstSubresource = region.srcSubresource;
+            region.extent = { backbuffer.Width, backbuffer.Height, 1 };
+            vkCmdCopyImage( commandBuffer, pBackbuffer->Image[resourceIndex],
+                            VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
+                            swapchainImages[imageIndex],
+                            VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, 1, &region );
+        } else {
+            VkImageBlit blit = {};
+            blit.srcSubresource.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+            blit.srcSubresource.layerCount = 1;
+            blit.dstSubresource = blit.srcSubresource;
+            blit.srcOffsets[1] = { (int32_t)backbuffer.Width,
+                                   (int32_t)backbuffer.Height, 1 };
+            blit.dstOffsets[1] = { (int32_t)gOtduSwapchainWidth,
+                                   (int32_t)gOtduSwapchainHeight, 1 };
+            vkCmdBlitImage( commandBuffer, pBackbuffer->Image[resourceIndex],
+                            VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
+                            swapchainImages[imageIndex],
+                            VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, 1, &blit,
+                            VK_FILTER_LINEAR );
+        }
 
         barrier.oldLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL;
         barrier.newLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;

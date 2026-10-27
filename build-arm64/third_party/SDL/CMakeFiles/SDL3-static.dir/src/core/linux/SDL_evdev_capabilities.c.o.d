@@ -1,0 +1,33 @@
+third_party/SDL/CMakeFiles/SDL3-static.dir/src/core/linux/SDL_evdev_capabilities.c.o: \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/core/linux/SDL_evdev_capabilities.c \
+ /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/SDL_internal.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/core/linux/SDL_evdev_capabilities.h \
+ /usr/aarch64-linux-gnu/include/linux/input.h \
+ /usr/aarch64-linux-gnu/include/sys/time.h \
+ /usr/aarch64-linux-gnu/include/features.h \
+ /usr/aarch64-linux-gnu/include/bits/types.h \
+ /usr/aarch64-linux-gnu/include/bits/types/time_t.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_timeval.h \
+ /usr/aarch64-linux-gnu/include/sys/select.h \
+ /usr/aarch64-linux-gnu/include/sys/ioctl.h \
+ /usr/aarch64-linux-gnu/include/bits/ioctls.h \
+ /usr/aarch64-linux-gnu/include/asm/ioctls.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/ioctls.h \
+ /usr/aarch64-linux-gnu/include/linux/ioctl.h \
+ /usr/aarch64-linux-gnu/include/asm/ioctl.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/ioctl.h \
+ /usr/aarch64-linux-gnu/include/bits/ioctl-types.h \
+ /usr/aarch64-linux-gnu/include/sys/ttydefaults.h \
+ /usr/aarch64-linux-gnu/include/sys/types.h \
+ /usr/aarch64-linux-gnu/include/linux/types.h \
+ /usr/aarch64-linux-gnu/include/asm/types.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/types.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/int-ll64.h \
+ /usr/aarch64-linux-gnu/include/asm/bitsperlong.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/bitsperlong.h \
+ /usr/aarch64-linux-gnu/include/linux/posix_types.h \
+ /usr/aarch64-linux-gnu/include/linux/stddef.h \
+ /usr/aarch64-linux-gnu/include/asm/posix_types.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/posix_types.h \
+ /usr/aarch64-linux-gnu/include/linux/input-event-codes.h

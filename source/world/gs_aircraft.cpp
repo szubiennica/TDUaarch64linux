@@ -875,6 +875,10 @@ void GSAircraft::setMapViewMaterials( const bool bMapView ) {
 }
 
 void GSAircraft::spawnAircrafts() {
+    static const bool bOtduOff = getenv( "OTDU_NO_AIRCRAFT" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_009033f0 + FUN_009033a0
     if ( bAircraftsSpawned || gpScenaric == nullptr ) {
         return;
@@ -925,6 +929,10 @@ void GSAircraft::spawnAircrafts() {
 }
 
 void GSAircraft::tick( float totalTime, float deltaTime ) {
+    static const bool bOtduOff = getenv( "OTDU_NO_AIRCRAFT" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_00903350
     (void)totalTime;
 
@@ -943,6 +951,10 @@ void GSAircraft::tick( float totalTime, float deltaTime ) {
 }
 
 void GSAircraft::draw( float deltaTime ) {
+    static const bool bOtduOff = getenv( "OTDU_NO_AIRCRAFT" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_00903030
     (void)deltaTime;
     if ( !bDrawAircrafts ) {

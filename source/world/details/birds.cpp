@@ -94,6 +94,10 @@ Birds::~Birds() {
 }
 
 bool Birds::initialize() {
+    static const bool bOtduOff = getenv( "OTDU_NO_BIRDS" ) != nullptr;
+    if ( bOtduOff ) {
+        return false;
+    }
     // FUN_009d6820
     loadBank( "Birds.bnk" );
     if ( !bank.isLoaded() ) {
@@ -161,6 +165,10 @@ void Birds::terminate() {
 }
 
 void Birds::draw() {
+    static const bool bOtduOff = getenv( "OTDU_NO_BIRDS" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_009d54e0
     if ( !drawList.isInitialized() || drawList.getNumPrimitives() == 0 ) {
         return;
@@ -170,6 +178,10 @@ void Birds::draw() {
 }
 
 void Birds::tick( float deltaTime ) {
+    static const bool bOtduOff = getenv( "OTDU_NO_BIRDS" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_009d6640
     Eigen::Vector4f shift = Eigen::Vector4f::Zero();
     if ( gpWorldStreaming != nullptr && gpWorldStreaming->isEnabled() ) {

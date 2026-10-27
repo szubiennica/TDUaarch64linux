@@ -1,0 +1,29 @@
+third_party/SDL/CMakeFiles/SDL3-static.dir/src/tray/unix/SDL_tray.c.o: \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/tray/unix/SDL_tray.c \
+ /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/SDL_internal.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/tray/unix/../SDL_tray_utils.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/tray/unix/../../video/SDL_stb_c.h \
+ /usr/aarch64-linux-gnu/include/dlfcn.h \
+ /usr/aarch64-linux-gnu/include/features.h \
+ /usr/lib/gcc-cross/aarch64-linux-gnu/14/include/stddef.h \
+ /usr/aarch64-linux-gnu/include/bits/dlfcn.h \
+ /usr/aarch64-linux-gnu/include/bits/dl_find_object.h \
+ /usr/aarch64-linux-gnu/include/errno.h \
+ /usr/aarch64-linux-gnu/include/bits/errno.h \
+ /usr/aarch64-linux-gnu/include/linux/errno.h \
+ /usr/aarch64-linux-gnu/include/asm/errno.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/errno.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/errno-base.h \
+ /usr/aarch64-linux-gnu/include/bits/types/error_t.h \
+ /usr/aarch64-linux-gnu/include/unistd.h \
+ /usr/aarch64-linux-gnu/include/bits/posix_opt.h \
+ /usr/aarch64-linux-gnu/include/bits/environments.h \
+ /usr/aarch64-linux-gnu/include/bits/wordsize.h \
+ /usr/aarch64-linux-gnu/include/bits/types.h \
+ /usr/aarch64-linux-gnu/include/bits/confname.h \
+ /usr/aarch64-linux-gnu/include/bits/getopt_posix.h \
+ /usr/aarch64-linux-gnu/include/bits/getopt_core.h \
+ /usr/aarch64-linux-gnu/include/bits/unistd_ext.h \
+ /usr/aarch64-linux-gnu/include/linux/close_range.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/tray/unix/../../core/unix/SDL_gtk.h

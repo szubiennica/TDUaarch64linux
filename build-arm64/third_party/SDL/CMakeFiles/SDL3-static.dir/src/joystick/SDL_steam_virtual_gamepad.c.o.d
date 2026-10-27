@@ -1,0 +1,32 @@
+third_party/SDL/CMakeFiles/SDL3-static.dir/src/joystick/SDL_steam_virtual_gamepad.c.o: \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/joystick/SDL_steam_virtual_gamepad.c \
+ /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/SDL_internal.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/joystick/SDL_joystick_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/joystick/SDL_steam_virtual_gamepad.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/joystick/../core/unix/SDL_appid.h \
+ /usr/aarch64-linux-gnu/include/sys/types.h \
+ /usr/aarch64-linux-gnu/include/sys/stat.h \
+ /usr/aarch64-linux-gnu/include/features.h \
+ /usr/aarch64-linux-gnu/include/bits/types.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_timespec.h \
+ /usr/aarch64-linux-gnu/include/bits/types/time_t.h \
+ /usr/aarch64-linux-gnu/include/bits/stat.h \
+ /usr/aarch64-linux-gnu/include/bits/struct_stat.h \
+ /usr/aarch64-linux-gnu/include/bits/endian.h \
+ /usr/aarch64-linux-gnu/include/bits/wordsize.h \
+ /usr/aarch64-linux-gnu/include/bits/statx.h \
+ /usr/aarch64-linux-gnu/include/linux/stat.h \
+ /usr/aarch64-linux-gnu/include/linux/types.h \
+ /usr/aarch64-linux-gnu/include/asm/types.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/types.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/int-ll64.h \
+ /usr/aarch64-linux-gnu/include/asm/bitsperlong.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/bitsperlong.h \
+ /usr/aarch64-linux-gnu/include/linux/posix_types.h \
+ /usr/aarch64-linux-gnu/include/linux/stddef.h \
+ /usr/aarch64-linux-gnu/include/asm/posix_types.h \
+ /usr/aarch64-linux-gnu/include/asm-generic/posix_types.h \
+ /usr/aarch64-linux-gnu/include/bits/statx-generic.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_statx_timestamp.h \
+ /usr/aarch64-linux-gnu/include/bits/types/struct_statx.h

@@ -46,6 +46,24 @@ static constexpr const PrtDescriptor kPrtDescriptors[] = {
     {"PRT_OLD",         eParticleType::PT_Old,       4,  0,  0 },
 };
 
+static uint8_t OtduCoverage( uint8_t v ) {
+    static const bool bLow = getenv( "OTDU_PARTICLE_QUALITY" ) != nullptr;
+    if ( !bLow || v == 0 ) {
+        return v;
+    }
+    const int32_t scaled = v / 2;
+    return (uint8_t)( scaled < 5 ? 5 : scaled );
+}
+
+static uint8_t OtduAlphaReject( uint8_t v ) {
+    static const bool bLow = getenv( "OTDU_PARTICLE_QUALITY" ) != nullptr;
+    if ( !bLow || v == 0 ) {
+        return v;
+    }
+    const int32_t scaled = v + v / 2;
+    return (uint8_t)( scaled > 255 ? 255 : scaled );
+}
+
 const PrtDescriptor *FindDescriptor( const char *pName ) {
     // FUN_0080c8d0
     std::string upper( pName );
@@ -303,8 +321,11 @@ Particle *GSParticles::createParticleType( const std::string &name,
                                            uint32_t size ) {
     // FUN_0080ca40
     const PrtDescriptor *pDescriptor = FindDescriptor( name.c_str() );
-    const int32_t instanceCount =
+    int32_t instanceCount =
         pDescriptor != nullptr ? pDescriptor->instanceCount : 4;
+    if ( getenv( "OTDU_PARTICLE_QUALITY" ) != nullptr && instanceCount > 4 ) {
+        instanceCount = 4;
+    }
 
     Particle *pParticle = new Particle();
     pParticle->Name = name;
@@ -346,8 +367,8 @@ Particle *GSParticles::createParticleType( const std::string &name,
         pInstance->pPrimaryEmitter = pInstance->file.findPrimaryDefinition();
         pInstance->file.applyMaterialDescriptor(
             pDescriptor != nullptr,
-            pDescriptor != nullptr ? pDescriptor->alphaReject : 0,
-            pDescriptor != nullptr ? pDescriptor->coverageBudget : 0 );
+            pDescriptor != nullptr ? OtduAlphaReject( pDescriptor->alphaReject ) : 0,
+            pDescriptor != nullptr ? OtduCoverage( pDescriptor->coverageBudget ) : 0 );
         pParticle->Instances.push_back( pInstance );
     }
     return pParticle;

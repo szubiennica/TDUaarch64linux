@@ -1,0 +1,22 @@
+third_party/SDL/CMakeFiles/SDL3-static.dir/src/cpuinfo/SDL_cpuinfo.c.o: \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/cpuinfo/SDL_cpuinfo.c \
+ /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/SDL_internal.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/cpuinfo/SDL_cpuinfo_c.h \
+ /usr/aarch64-linux-gnu/include/unistd.h \
+ /usr/aarch64-linux-gnu/include/features.h \
+ /usr/aarch64-linux-gnu/include/bits/posix_opt.h \
+ /usr/aarch64-linux-gnu/include/bits/environments.h \
+ /usr/aarch64-linux-gnu/include/bits/wordsize.h \
+ /usr/aarch64-linux-gnu/include/bits/types.h \
+ /usr/lib/gcc-cross/aarch64-linux-gnu/14/include/stddef.h \
+ /usr/aarch64-linux-gnu/include/bits/confname.h \
+ /usr/aarch64-linux-gnu/include/bits/getopt_posix.h \
+ /usr/aarch64-linux-gnu/include/bits/getopt_core.h \
+ /usr/aarch64-linux-gnu/include/bits/unistd_ext.h \
+ /usr/aarch64-linux-gnu/include/linux/close_range.h \
+ /usr/aarch64-linux-gnu/include/sys/auxv.h \
+ /usr/aarch64-linux-gnu/include/elf.h \
+ /usr/lib/gcc-cross/aarch64-linux-gnu/14/include/stdint.h \
+ /usr/aarch64-linux-gnu/include/sys/cdefs.h \
+ /usr/aarch64-linux-gnu/include/bits/hwcap.h

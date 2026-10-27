@@ -1,0 +1,22 @@
+third_party/JoltPhysics/Build/CMakeFiles/Jolt.dir/__/Jolt/Core/Factory.cpp.o: \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Jolt/Core/Factory.cpp \
+ /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/Core/Factory.h \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/Core/RTTI.h \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/Core/Reference.h \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/Core/Atomics.h \
+ /usr/aarch64-linux-gnu/include/c++/14/atomic \
+ /usr/aarch64-linux-gnu/include/c++/14/bits/version.h \
+ /usr/aarch64-linux-gnu/include/c++/14/aarch64-linux-gnu/bits/c++config.h \
+ /usr/aarch64-linux-gnu/include/c++/14/bits/atomic_base.h \
+ /usr/aarch64-linux-gnu/include/c++/14/new \
+ /usr/lib/gcc-cross/aarch64-linux-gnu/14/include/stdint.h \
+ /usr/aarch64-linux-gnu/include/c++/14/bits/atomic_lockfree_defines.h \
+ /usr/aarch64-linux-gnu/include/c++/14/bits/move.h \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/ObjectStream/SerializableAttribute.h \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/ObjectStream/ObjectStreamTypes.h \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/Core/UnorderedMap.h \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/Core/HashTable.h \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/Math/BVec16.h \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/Math/BVec16.inl \
+ /home/air/OpenTestDriveUnlimited/third_party/JoltPhysics/Build/../Jolt/Core/UnorderedMapFwd.h

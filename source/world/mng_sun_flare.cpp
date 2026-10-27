@@ -872,6 +872,10 @@ void MngSunFlare::buildDrawLists( const Eigen::Vector2f &screenPos ) {
 }
 
 void MngSunFlare::draw() {
+    static const bool bOtduOff = getenv( "OTDU_NO_SUNFLARE" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_006f00c0
     if ( !gbSunEnabled || !bInitialized || !bDraw ) {
         return;

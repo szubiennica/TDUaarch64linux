@@ -96,6 +96,10 @@ Papers::~Papers() {
 }
 
 bool Papers::initialize() {
+    static const bool bOtduOff = getenv( "OTDU_NO_PAPERS" ) != nullptr;
+    if ( bOtduOff ) {
+        return false;
+    }
     // FUN_008a74a0
     loadBank( "Papers.bnk" );
     if ( !bank.isLoaded() ) {
@@ -116,12 +120,20 @@ bool Papers::initialize() {
 }
 
 void Papers::tick( float deltaTime ) {
+    static const bool bOtduOff = getenv( "OTDU_NO_PAPERS" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_008a7480
     updatePapers( deltaTime );
     updateLeaf();
 }
 
 void Papers::draw() {
+    static const bool bOtduOff = getenv( "OTDU_NO_PAPERS" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_008a63c0
     // NOP
 }

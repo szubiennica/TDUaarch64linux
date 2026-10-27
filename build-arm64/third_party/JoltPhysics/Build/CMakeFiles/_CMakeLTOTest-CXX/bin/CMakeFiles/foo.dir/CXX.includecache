@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/air/OpenTestDriveUnlimited/build-arm64/third_party/JoltPhysics/Build/CMakeFiles/_CMakeLTOTest-CXX/src/foo.cpp
+

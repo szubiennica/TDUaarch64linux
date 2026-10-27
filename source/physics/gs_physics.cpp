@@ -5446,7 +5446,7 @@ void GSPhysics::initializeJolt() {
     pTempAllocator = new JPH::TempAllocatorImpl( 32 * 1024 * 1024 );
     pJobSystem = new JPH::JobSystemThreadPool(
         JPH::cMaxPhysicsJobs, JPH::cMaxPhysicsBarriers,
-        static_cast<int>( std::thread::hardware_concurrency() ) - 1 );
+        ( getenv( "OTDU_PHYSICS_THREADS" ) ? atoi( getenv( "OTDU_PHYSICS_THREADS" ) ) : 3 ) );
 
     JPH::Factory::sInstance = new JPH::Factory();
     JPH::RegisterTypes();

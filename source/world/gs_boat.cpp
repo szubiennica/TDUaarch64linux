@@ -615,6 +615,10 @@ bool GSBoat::initialize( TestDriveGameInstance *param_2 ) {
 }
 
 void GSBoat::spawnBoats() {
+    static const bool bOtduOff = getenv( "OTDU_NO_BOATS" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_008e9be0
     if ( bBoatsSpawned || gpScenaric == nullptr ) {
         return;
@@ -670,6 +674,10 @@ void GSBoat::spawnBoats() {
 }
 
 void GSBoat::tick( float totalTime, float deltaTime ) {
+    static const bool bOtduOff = getenv( "OTDU_NO_BOATS" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_008e98f0
     (void)totalTime;
 
@@ -766,6 +774,10 @@ void GSBoat::setEcumeEnabled( bool bEnabled ) {
 }
 
 void GSBoat::draw( float deltaTime ) {
+    static const bool bOtduOff = getenv( "OTDU_NO_BOATS" ) != nullptr;
+    if ( bOtduOff ) {
+        return;
+    }
     // FUN_008e9790
     (void)deltaTime;
     mngActor.draw();

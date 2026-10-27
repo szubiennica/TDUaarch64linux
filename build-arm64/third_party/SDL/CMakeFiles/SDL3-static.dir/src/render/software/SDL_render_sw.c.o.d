@@ -1,0 +1,19 @@
+third_party/SDL/CMakeFiles/SDL3-static.dir/src/render/software/SDL_render_sw.c.o: \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_render_sw.c \
+ /usr/aarch64-linux-gnu/include/stdc-predef.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/SDL_internal.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/../SDL_sysrender.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/../../video/SDL_surface_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/../../video/SDL_blit.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/../SDL_yuv_sw_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_render_sw_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_draw.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/../../video/SDL_surface_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_blendfillrect.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_blendline.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_blendpoint.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_drawline.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_drawpoint.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/SDL_triangle.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/../../video/SDL_pixels_c.h \
+ /home/air/OpenTestDriveUnlimited/third_party/SDL/src/render/software/../../video/SDL_rotate.h
