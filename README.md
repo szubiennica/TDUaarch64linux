@@ -77,8 +77,8 @@ Updates of original project (updates/screenshots) can be found in this [thread](
 | Console | Key sent to the game | Function |
 |---|---|---|
 | Left stick | Steering, menu navigation |
-| Right trigger | Up | Accelerate |
-| Left trigger | Down | Brake / reverse |
+| Right trigger | Accelerate |
+| Left trigger | Brake / reverse |
 | A | Validate, headlights |
 | B | Back |
 | X | Handbrake |
