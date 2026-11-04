@@ -74,7 +74,7 @@ Updates of original project (updates/screenshots) can be found in this [thread](
 
 ## Controls
 
-| Console | Key sent to the game | Function |
+| Console | Function |
 |---|---|---|
 | Left stick | Steering, menu navigation |
 | Right trigger | Accelerate |
