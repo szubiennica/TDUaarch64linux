@@ -75,7 +75,7 @@ Updates of original project (updates/screenshots) can be found in this [thread](
 ## Controls
 
 | Console | Function |
-|---|---|---|
+|---|---|
 | Left stick | Steering, menu navigation |
 | Right trigger | Accelerate |
 | Left trigger | Brake / reverse |
